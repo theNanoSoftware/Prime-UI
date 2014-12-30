@@ -10,12 +10,19 @@ namespace PrimeUI
      static class UI
      {
           private static Form _form;
-
-          public static void InitializeWindow()
+          private static Display[] _availableDisplays;
+          public static Display[] AvailableDisplays {
+               get { return _availableDisplays; }
+          }
+          public static Display PrimaryDisplay
           {
-               _form = new Form();
-               _form.FormBorderStyle = FormBorderStyle.None;
-               _form.WindowState = FormWindowState.Maximized;
+               get { return _availableDisplays.FirstOrDefault(item => item.Primary); }
+          }
+
+          public static void InitializeUI()
+          {
+               _form = new Form {FormBorderStyle = FormBorderStyle.None, WindowState = FormWindowState.Maximized};
+               _availableDisplays = Screen.AllScreens.Select(screen => new Display(screen)).ToArray();
           }
 
           public static void Show()

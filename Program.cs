@@ -12,9 +12,7 @@ namespace PrimeUI
           [STAThread]
           static void Main()
           {
-               UI.InitializeWindow();
-               UI.Show();
-               UI.Close();
+               UI.InitializeUI();
           }
      }
 }

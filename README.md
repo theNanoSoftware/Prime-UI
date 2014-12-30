@@ -1,4 +1,4 @@
-Prime-UI
+Prime UI
 ========
 
-Open-source free windows UI
+Easy, quick and customizable UI for windows

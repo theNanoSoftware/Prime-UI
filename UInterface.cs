@@ -5,9 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PrimeUI
+namespace PrimeUI.UI
 {
-     static class UI
+     static class UInterface
      {
           private static Form _form;
           private static Display[] _availableDisplays;
@@ -27,7 +27,7 @@ namespace PrimeUI
 
           public static void Show()
           {
-               _form.ShowDialog();
+               PrimaryDisplay.ShowForm(_form);
           }
 
           public static void Close()
